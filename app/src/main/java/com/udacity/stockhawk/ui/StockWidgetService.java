@@ -100,6 +100,7 @@ public class StockWidgetService extends RemoteViewsService {
         @Override
         public RemoteViews getViewAt(int position) {
             data.moveToPosition(position);
+            Log.d("CURSORDUMP", DatabaseUtils.dumpCursorToString(data));
 
             RemoteViews views = new RemoteViews(mAppContext.getPackageName(), R.layout.list_item_quote);
 
