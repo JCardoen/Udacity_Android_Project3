@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">الأسهم، هوك</string>
+
+    <string name="empty_stock_list">لا معلومات الأسهم المتاحة</string>
+    <string name="no_connection">لا يوجد اتصال بالإنترنت. تأكد من وجود اتصال.</string>
+
+    <string name="error_no_network">لا اتصال الشبكة! سيتم تحميل مؤشر الأسهم عندما تكون الشبكة متاحة.</string>
+    <string name="error_no_stocks">لم يتم إضافة أي أسهم! ضرب زر العمل العائمة لإضافة واحد.</string>
+
+    <string name="toast_stock_added_no_connectivity">تمت إضافة الرمز٪ s. سيتم تحديث عندما الشبكة المتاحة.</string>
+    <string name="toast_no_connectivity">سيتم تحديث عندما الشبكة المتاحة.</string>
+    <string name="toast_db_empty">قاعدة البيانات فارغة.</string>
+    <string name="pref_stock_status_key" />
+    <string name="stock_not_found">لم يتم العثور على الأسهم. أدخل مخزون صالح.</string>
+    <string name="add_stock_button_description">إضافة الأسهم إلى قائمة الأسهم الخاصة بك</string>
+
+</resources>
