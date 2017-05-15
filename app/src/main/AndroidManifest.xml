@@ -12,8 +12,8 @@
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
         android:supportsRtl="true"
+        android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ui.MainActivity">
             <intent-filter>
@@ -23,9 +23,26 @@
             </intent-filter>
         </activity>
 
+        <receiver android:name=".ui.StockWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/stockwidgetinfo" />
+        </receiver>
+
+        <!-- Service to ensure access to widget from stockwidgetservice -->
+        <service android:name=".ui.StockWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+
         <service
             android:name=".sync.QuoteIntentService"
             android:exported="false" />
+
+
 
         <provider
             android:name=".data.StockProvider"
@@ -37,6 +54,8 @@
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity android:name=".ui.StockDetailedActivity"></activity>
     </application>
 
 </manifest>

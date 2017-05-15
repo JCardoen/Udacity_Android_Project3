@@ -34,8 +34,7 @@
     <string name="toast_db_empty">Database is empty.</string>
     <string name="pref_stock_status_key" />
     <string name="stock_not_found">Stock not found. Enter a valid stock.</string>
-    <string name="dialog_text">No stock found</string>
-    <string name="dialog_ok">Ok</string>
     <string name="add_stock_button_description">Add a stock to your stock list</string>
+    <string name="widget_title">StockHawk Widget</string>
 
 </resources>
