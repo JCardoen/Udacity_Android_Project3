@@ -67,11 +67,12 @@ public class StockWidgetService extends RemoteViewsService {
 
                  data = mAppContext.getContentResolver().query(
                         Contract.Quote.URI,
-                        null,
+                         Contract.Quote.QUOTE_COLUMNS.toArray(new String[]{}),
                         null,
                         null,
                         null
                 );
+
 
                 Log.d("Service", DatabaseUtils.dumpCursorToString(data));
 
@@ -84,7 +85,7 @@ public class StockWidgetService extends RemoteViewsService {
 
         @Override
         public void onDataSetChanged() {
-            getData();
+
         }
 
         @Override
@@ -108,7 +109,7 @@ public class StockWidgetService extends RemoteViewsService {
             float absChange = data.getFloat(data.getColumnIndex(Contract.Quote.COLUMN_ABSOLUTE_CHANGE));
             float perChange = data.getFloat(data.getColumnIndex(Contract.Quote.COLUMN_PERCENTAGE_CHANGE));
             float price = data.getFloat(data.getColumnIndex(Contract.Quote.COLUMN_PRICE));
-            Log.d("Cv item contents", symbol + absChange + perChange + price);
+
 
             views.setTextViewText(R.id.symbol, symbol);
             views.setTextViewText(R.id.price, dollarFormat.format(price));

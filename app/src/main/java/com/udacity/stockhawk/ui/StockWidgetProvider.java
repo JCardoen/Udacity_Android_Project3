@@ -27,7 +27,7 @@ public class StockWidgetProvider extends AppWidgetProvider{
 
             Intent intent = new Intent(context, MainActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-            views.setOnClickPendingIntent(R.id.widget, pendingIntent);
+            views.setOnClickPendingIntent(R.id.widget_content, pendingIntent);
             views.setRemoteAdapter(R.id.widget_list, new Intent(context, StockWidgetService.class));
 
             Intent clickedIntent = new Intent(context, StockDetailedActivity.class);
