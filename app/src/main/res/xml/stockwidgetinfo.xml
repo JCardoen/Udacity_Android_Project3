@@ -3,5 +3,5 @@
     android:minHeight="40dp"
     android:updatePeriodMillis="0"
     android:resizeMode="vertical|horizontal"
-    android:initialLayout="@layout/stock_widgets"
+    android:initialLayout="@layout/stock_widget"
 />

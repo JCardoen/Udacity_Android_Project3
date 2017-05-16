@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">الأسهم، هوك</string>
 
     <string name="empty_stock_list">لا معلومات الأسهم المتاحة</string>
     <string name="no_connection">لا يوجد اتصال بالإنترنت. تأكد من وجود اتصال.</string>

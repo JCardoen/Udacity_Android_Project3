@@ -85,7 +85,8 @@ public class StockWidgetService extends RemoteViewsService {
 
         @Override
         public void onDataSetChanged() {
-            getData();
+            data = null;
+            onCreate();
         }
 
         @Override

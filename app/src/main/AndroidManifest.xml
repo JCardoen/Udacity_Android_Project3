@@ -26,6 +26,7 @@
         <receiver android:name=".ui.StockWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.udacity.stockhawk.ACTION_DATA_UPDATED"/>
             </intent-filter>
 
             <meta-data
