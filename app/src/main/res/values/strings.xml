@@ -21,6 +21,7 @@
     <string name="action_change_units" translatable="false">@string/pref_display_mode_key</string>
     <string name="empty_stock_list">No Stock Information Available</string>
     <string name="no_connection">No internet connection. Make sure you have a connection.</string>
+
     <string name="dialog_title">Add Stock</string>
     <string name="dialog_hint">Symbol (e.g. GOOG)</string>
     <string name="dialog_cancel">Cancel</string>
