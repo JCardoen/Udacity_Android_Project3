@@ -85,7 +85,7 @@ public class StockWidgetService extends RemoteViewsService {
 
         @Override
         public void onDataSetChanged() {
-
+            getData();
         }
 
         @Override
@@ -101,11 +101,12 @@ public class StockWidgetService extends RemoteViewsService {
         @Override
         public RemoteViews getViewAt(int position) {
             data.moveToPosition(position);
-            Log.d("CURSORDUMP", DatabaseUtils.dumpCursorToString(data));
+            Log.d("POSITION", "" + position);
 
             RemoteViews views = new RemoteViews(mAppContext.getPackageName(), R.layout.list_item_quote);
 
             String symbol = data.getString(data.getColumnIndex(Contract.Quote.COLUMN_SYMBOL));
+            Log.d("Symbol", symbol);
             float absChange = data.getFloat(data.getColumnIndex(Contract.Quote.COLUMN_ABSOLUTE_CHANGE));
             float perChange = data.getFloat(data.getColumnIndex(Contract.Quote.COLUMN_PERCENTAGE_CHANGE));
             float price = data.getFloat(data.getColumnIndex(Contract.Quote.COLUMN_PRICE));
@@ -116,9 +117,9 @@ public class StockWidgetService extends RemoteViewsService {
 
 
             if (absChange > 0) {
-                views.setInt(R.id.change, "setBackgroundresource", R.drawable.percent_change_pill_green);
+                views.setInt(R.id.change, "setBackgroundResource", R.drawable.percent_change_pill_green);
             } else {
-                views.setInt(R.id.change, "setBackgroundresource", R.drawable.percent_change_pill_red);
+                views.setInt(R.id.change, "setBackgroundResource", R.drawable.percent_change_pill_red);
             }
 
             views.setTextViewText(R.id.change, percentageFormat.format(perChange / 100));

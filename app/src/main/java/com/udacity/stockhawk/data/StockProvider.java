@@ -44,16 +44,7 @@ public class StockProvider extends ContentProvider {
 
         switch (uriMatcher.match(uri)) {
             case QUOTE:
-                returnCursor = db.query(
-                        Contract.Quote.TABLE_NAME,
-                        projection,
-                        selection,
-                        selectionArgs,
-                        null,
-                        null,
-                        sortOrder
-                );
-                Log.d("ServiceDb", DatabaseUtils.dumpCursorToString(returnCursor));
+                returnCursor = db.rawQuery("SELECT * FROM " + Contract.Quote.TABLE_NAME, null);
                 break;
 
             case QUOTE_FOR_SYMBOL:
