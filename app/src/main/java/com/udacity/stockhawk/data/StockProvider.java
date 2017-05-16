@@ -5,10 +5,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.UriMatcher;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 
 public class StockProvider extends ContentProvider {
@@ -51,6 +53,7 @@ public class StockProvider extends ContentProvider {
                         null,
                         sortOrder
                 );
+                Log.d("ServiceDb", DatabaseUtils.dumpCursorToString(returnCursor));
                 break;
 
             case QUOTE_FOR_SYMBOL:

@@ -65,9 +65,9 @@ public class StockWidgetService extends RemoteViewsService {
             long identity = Binder.clearCallingIdentity();
             try {
 
-                 data = mAppContext.getContentResolver().query(
+                data = mAppContext.getContentResolver().query(
                         Contract.Quote.URI,
-                         Contract.Quote.QUOTE_COLUMNS.toArray(new String[]{}),
+                        null,
                         null,
                         null,
                         null
@@ -115,7 +115,7 @@ public class StockWidgetService extends RemoteViewsService {
             views.setTextViewText(R.id.price, dollarFormat.format(price));
 
 
-            if(absChange > 0) {
+            if (absChange > 0) {
                 views.setInt(R.id.change, "setBackgroundresource", R.drawable.percent_change_pill_green);
             } else {
                 views.setInt(R.id.change, "setBackgroundresource", R.drawable.percent_change_pill_red);
